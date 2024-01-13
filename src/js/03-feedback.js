@@ -4,7 +4,7 @@ const form = document.querySelector('.feedback-form');
 
 const LOCAL_STORAGE_KEY = 'feedback-form-state';
 
-const formData = {};
+let formData = {};
 
 const onFormInput = event => {
     const target = event.target;
@@ -17,6 +17,7 @@ const onFormSubmit = event => {
     console.log(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)));
     event.currentTarget.reset();
     localStorage.removeItem(LOCAL_STORAGE_KEY);
+    formData = {};
 }
 
 const populateForm = () => {
